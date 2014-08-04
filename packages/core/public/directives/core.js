@@ -39,7 +39,7 @@ angular.module('mean.core').factory('myCustomErrorMessageResolver', [
                 }
             }
 
-            return $translate("ERROR." + errorType, {'arg': parameters[0]});
+            return $translate('ERROR.' + errorType, {'arg': parameters[0]});
         };
 
         return {
