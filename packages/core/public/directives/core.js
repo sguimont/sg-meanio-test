@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('mean.core').value('bsErrorMessages', {
-    'required': 'This field is required!',
-    'email': 'This field has to be a valid email address!',
-    'url': 'This field has to be a valid URL!',
-    'number': 'This field has to be a number!'
+    'required': 'ERROR.FIELD_REQUIRED',
+    'email': 'ERROR.INVALID_EMAIL',
+    'url': 'ERROR.INVALID_URL',
+    'number': 'ERROR.INVALID_NUMBER',
+    'minlength': 'ERROR.MIN_LENGTH'
 });
 
 angular.module('mean.core').directive('formGroup', [ 'bsErrorMessages', function (bsErrorMessages) {

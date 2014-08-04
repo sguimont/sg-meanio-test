@@ -1,8 +1,8 @@
 <div ng-class="{'has-error': $field.$invalid && $field.$dirty, 'has-success': $field.$valid && $field.$dirty}" class="form-group">
-    <label ng-if="label" class="control-label">{{label}}</label>
+    <label ng-if="label" class="control-label">{{ label }}</label>
 
     <div ng-transclude="ng-transclude" class="ef-control"></div>
     <span ng-repeat="error in $fieldErrors" class="help-block text-danger">
-        {{$errorMessages[error]}}
+        <span translate="{{ $errorMessages[error] }}">{{ $errorMessages[error] }}</span>
     </span>
 </div>

@@ -1,0 +1,25 @@
+{
+    "TITLE": "Bonjour",
+    "FOO": "Ceci est un paragraphe.",
+    "BUTTON_LANG_EN": "Anglais",
+    "BUTTON_LANG_FR": "Français",
+    "BUTTON_SUBMIT": "Soumettre",
+    "TEST_FORM": {
+        "FIRST_NAME": "Prénom",
+        "LAST_NAME": "Nom",
+        "AGE": "Âge",
+        "EMAIL": "Couriel",
+        "GENDER": "Sexe"
+    },
+    "GENDER": {
+        "MALE": "Homme",
+        "FEMALE": "Femme"
+    },
+    "ERROR": {
+        "FIELD_REQUIRED": "Ce champs est requis.",
+        "INVALID_EMAIL": "Ce champs doit être une adresse courriel valide.",
+        "INVALID_URL": "Ce champs doit être un URL valide!",
+        "INVALID_NUMBER": "Ce champs doit être un chiffre!",
+        "MIN_LENGTH": "Doit avoir au moins X characters!"
+    }
+}

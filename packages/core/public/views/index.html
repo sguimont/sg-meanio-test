@@ -1,42 +1,39 @@
 <div class="" data-ng-controller="CoreController">
-    <h2>Package: {{package.name}}</h2>
-    </br>
     <form name="form" valid-submit="sendForm()" novalidate="novalidate">
         <div class="row">
             <div class="col-sm-6">
-                <form-group label="First Name" error-messages="{'minlength': 'min length of 3'}">
+                <form-group label="{{ 'TEST_FORM.FIRST_NAME' | translate  }}">
                     <input type="text" ng-model="user.firstName" required="" form-control="" ng-minlength="3"/>
                 </form-group>
             </div>
             <div class="col-sm-6">
-                <form-group label="Last Name">
-                    <input type="text" ng-model="user.lastName" required="" form-control=""/>
+                <form-group label="{{ 'TEST_FORM.LAST_NAME' | translate  }}">
+                    <input type="text" ng-model="user.lastName" required="" form-control="" ng-minlength="2"/>
                 </form-group>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-3">
-                <form-group label="Age">
+                <form-group label="{{ 'TEST_FORM.AGE' | translate  }}">
                     <input type="number" ng-model="user.age" form-control=""/>
                 </form-group>
             </div>
             <div class="col-sm-6">
-                <form-group label="Email">
+                <form-group label="{{ 'TEST_FORM.EMAIL' | translate  }}">
                     <input type="email" ng-model="user.email" required="" form-control=""/>
                 </form-group>
             </div>
             <div class="col-sm-3">
-                <form-group label="Gender">
+                <form-group label="{{ 'TEST_FORM.GENDER' | translate }}">
                     <select ng-model="user.gender" form-control="" required="">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="male" translate="GENDER.MALE">Male</option>
+                        <option value="female" translate="GENDER.FEMALE">Female</option>
                     </select>
                 </form-group>
             </div>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary" ng-disabled="(form.$submitted && form.$invalid)">Submit!
-            </button>
+            <button type="submit" class="btn btn-primary" ng-disabled="(form.$submitted && form.$invalid)" translate="BUTTON_SUBMIT">Submit</button>
         </div>
         <pre>{{user | json}}</pre>
     </form>
@@ -48,8 +45,9 @@
             <p translate="FOO">This is a paragraph</p>
         </div>
         <div>
-            <button class="btn" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN" class="ng-scope">english</button>
-            <button class="btn" ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE" class="ng-scope">german</button>
+            <button class="btn" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN" class="ng-scope">English</button>
+            <button class="btn" ng-click="changeLanguage('fr')" translate="BUTTON_LANG_FR" class="ng-scope">French</button>
+
         </div>
     </div>
 </div>
