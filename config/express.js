@@ -95,6 +95,15 @@ module.exports = function(app, passport, db) {
     app.use(passport.initialize());
     app.use(passport.session());
 
+    // Add no-cache
+    app.use(function noCache(req, res, next) {
+        // FIXME (SG) : Must add no-cache for ajax call only, maybe better to do it from angular
+        res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+        res.header('Pragma', 'no-cache');
+        res.header('Expires', 0);
+        next();
+    });
+
     //mean middleware from modules before routes
     app.use(mean.chainware.before);
 
