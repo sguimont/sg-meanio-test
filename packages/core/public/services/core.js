@@ -9,6 +9,7 @@ angular.module('mean.core').factory('Core', [
 ]);
 
 angular.module('mean.core').config(function ($translateProvider, $translatePartialLoaderProvider) {
+
     $translateProvider.translations('en', {
         TITLE: 'Hello',
         FOO: 'This is a paragraph.',
@@ -27,11 +28,11 @@ angular.module('mean.core').config(function ($translateProvider, $translateParti
             FEMALE: 'Female'
         },
         ERROR: {
-            FIELD_REQUIRED: 'This field is required!',
-            INVALID_EMAIL: 'This field has to be a valid email address!',
-            INVALID_URL: 'This field has to be a valid URL!',
-            INVALID_NUMBER: 'This field has to be a number!',
-            MIN_LENGTH: 'This field must have at least x characters'
+            required: 'This field is required!',
+            email: 'This field has to be a valid email address!',
+            url: 'This field has to be a valid URL!',
+            number: 'This field has to be a number!',
+            minlength: 'This field must have at least {{arg}} characters'
         }
     });
 

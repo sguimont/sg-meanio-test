@@ -16,10 +16,10 @@
         "FEMALE": "Femme"
     },
     "ERROR": {
-        "FIELD_REQUIRED": "Ce champs est requis.",
-        "INVALID_EMAIL": "Ce champs doit être une adresse courriel valide.",
-        "INVALID_URL": "Ce champs doit être un URL valide!",
-        "INVALID_NUMBER": "Ce champs doit être un chiffre!",
-        "MIN_LENGTH": "Doit avoir au moins X characters!"
+        "required": "Ce champs est requis.",
+        "email": "Ce champs doit être une adresse courriel valide.",
+        "url": "Ce champs doit être un URL valide!",
+        "number": "Ce champs doit être un chiffre!",
+        "minlength": "Doit avoir au moins {{arg}} characters!"
     }
 }

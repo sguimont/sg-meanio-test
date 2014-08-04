@@ -8,7 +8,49 @@ angular.module('mean.core').value('bsErrorMessages', {
     'minlength': 'ERROR.MIN_LENGTH'
 });
 
-angular.module('mean.core').directive('formGroup', [ 'bsErrorMessages', function (bsErrorMessages) {
+angular.module('mean.core').factory('myCustomErrorMessageResolver', [
+    '$q', '$translate',
+    function ($q, $translate) {
+        /**
+         * @ngdoc function
+         * @name defaultErrorMessageResolver#resolve
+         * @methodOf defaultErrorMessageResolver
+         *
+         * @description
+         * Resolves a validate error type into a user validation error message
+         *
+         * @param {String} errorType - The type of validation error that has occurred.
+         * @param {Element} el - The input element that is the source of the validation error.
+         * @returns {Promise} A promise that is resolved when the validation message has been produced.
+         */
+        var resolve = function (errorType, el) {
+            var parameters = [],
+                parameter;
+
+            if (el && el.attr) {
+                try {
+                    parameter = el.attr(errorType);
+                    if (parameter === undefined) {
+                        parameter = el.attr('data-ng-' + errorType) || el.attr('ng-' + errorType);
+                    }
+                    parameters.push(parameter || '');
+                } catch (e) {
+                    console.error(e);
+                }
+            }
+
+            return $translate("ERROR." + errorType, {'arg': parameters[0]});
+        };
+
+        return {
+            resolve: resolve
+        };
+    }
+]);
+
+angular.module('mean.core').directive('formGroup', [ 'bsErrorMessages', 'validator', 'myCustomErrorMessageResolver', function (bsErrorMessages, validator, myCustomErrorMessageResolver) {
+    validator.setErrorMessageResolver(myCustomErrorMessageResolver.resolve);
+
     return {
         restrict: 'E',
         transclude: true,
@@ -19,26 +61,27 @@ angular.module('mean.core').directive('formGroup', [ 'bsErrorMessages', function
             errorMessages: '='
         },
         controller: ['$scope', '$element', '$attrs', function ($scope) {
-            if ($scope.errorMessages) {
-                $scope.$errorMessages = angular.copy($scope.errorMessages);
-            } else {
-                $scope.$errorMessages = {};
-            }
-
-            $scope.$errorMessages = angular.extend(angular.copy(bsErrorMessages), $scope.$errorMessages);
+//            if ($scope.errorMessages) {
+//                $scope.$errorMessages = angular.copy($scope.errorMessages);
+//            } else {
+//                $scope.$errorMessages = {};
+//            }
+//
+//            $scope.$errorMessages = angular.extend(angular.copy(bsErrorMessages), $scope.$errorMessages);
+//            $scope.$errorArg = null;
 
             this.setField = function (field) {
                 $scope.$field = field;
             };
 
-            $scope.$watch('$field.$dirty && $field.$error', function (errorList) {
-                $scope.$fieldErrors = [];
-                angular.forEach(errorList, function (invalid, key) {
-                    if (invalid) {
-                        $scope.$fieldErrors.push(key);
-                    }
-                });
-            }, true);
+//            $scope.$watch('$field.$dirty && $field.$error', function (errorList) {
+//                $scope.$fieldErrors = [];
+//                angular.forEach(errorList, function (invalid, key) {
+//                    if (invalid) {
+//                        $scope.$fieldErrors.push(key);
+//                    }
+//                });
+//            }, true);
         }]
     };
 }

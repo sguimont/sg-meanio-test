@@ -17,7 +17,7 @@ for (var index in window.modules) {
 }
 
 // Default modules
-var modules = ['ngCookies', 'ngResource', 'ui.bootstrap', 'ui.router', 'pascalprecht.translate'];
+var modules = ['ngCookies', 'ngResource', 'ui.bootstrap', 'ui.router', 'pascalprecht.translate', 'jcs-autoValidate'];
 modules = modules.concat(packageModules);
 
 // Combined modules

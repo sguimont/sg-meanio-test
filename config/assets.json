@@ -17,7 +17,8 @@
                 "bower_components/angular-translate/angular-translate.js",
                 "bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
                 "bower_components/angular-translate-storage-local/angular-translate-storage-local.js",
-                "bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"
+                "bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js",
+                "bower_components/angular-auto-validate/dist/jcs-auto-validate.js"
             ]
         }
     }
