@@ -2,7 +2,9 @@
 
 var path = require('path'),
     rootPath = path.normalize(__dirname + '/../..');
+
 console.log("MONGO: " + process.env.MONGO_URL);
+console.log("PORT: " + process.env.PORT || 3000);
 
 module.exports = {
     root: rootPath,
