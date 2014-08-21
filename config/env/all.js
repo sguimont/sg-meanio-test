@@ -7,6 +7,7 @@ module.exports = {
     root: rootPath,
     port: process.env.PORT || 3000,
     hostname: process.env.HOST || process.env.HOSTNAME,
+
     db: process.env.MONGO_URL,
     templateEngine: 'swig',
 
