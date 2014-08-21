@@ -4,6 +4,7 @@
             "bower_components/build/css/dist.min.css": [
             ]
         },
+
         "js": {
             "bower_components/build/js/dist.min.js": [
                 "bower_components/jquery/dist/jquery.min.js",
