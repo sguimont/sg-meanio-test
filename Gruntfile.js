@@ -8,7 +8,7 @@ var paths = {
 
 module.exports = function(grunt) {
 
-    // TEST
+    // TEST 1
 
     if (process.env.NODE_ENV !== 'production') {
         require('time-grunt')(grunt);
