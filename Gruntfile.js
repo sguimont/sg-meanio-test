@@ -8,6 +8,8 @@ var paths = {
 
 module.exports = function(grunt) {
 
+    console.log("ENV: " + process.env.NODE_ENV);
+
     if (process.env.NODE_ENV !== 'production') {
         require('time-grunt')(grunt);
     }
